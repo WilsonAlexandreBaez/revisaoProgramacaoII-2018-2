@@ -13,4 +13,29 @@ class Doente {
     private int sexo;
     private int dataNascimento;
     private Endereco endereco;
+
+    public int getSexo() {
+        return sexo;
+    }
+
+    public void setSexo(int sexo) {
+        this.sexo = sexo;
+    }
+
+    public int getDataNascimento() {
+        return dataNascimento;
+    }
+
+    public void setDataNascimento(int dataNascimento) {
+        this.dataNascimento = dataNascimento;
+    }
+
+    public Endereco getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
+    }
+    
 }

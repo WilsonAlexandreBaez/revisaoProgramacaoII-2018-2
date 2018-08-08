@@ -5,6 +5,7 @@
  */
 package joaodengoso;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -17,9 +18,16 @@ public class JoaoDengoso {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        int escolha = 0;
-        Scanner objetoScanner = new Scanner(System.in);
         
+        ArrayList<Doente> bancoDeDados = new ArrayList<Doente>();
+       
+        Doente []pessoas = new Doente[10];
+        int escolha = 0;
+        int sexo,data;
+        
+        
+        Scanner objetoScanner = new Scanner(System.in);
+        do{
         System.out.println("1 - Cadastro de Doente");
         System.out.println("2 - Relatório 1");
         System.out.println("3 - Relatório 2");
@@ -31,11 +39,34 @@ public class JoaoDengoso {
         switch (escolha){
             case 1:
                 Doente novoDoente = new Doente();
+                System.out.println("Qual o sexo? 0/1");
+                sexo = objetoScanner.nextInt();
+                novoDoente.setSexo(sexo);
+                
+                System.out.println("Qual data de nascimento? (somente numeros)");
+                data = objetoScanner.nextInt();
+                novoDoente.setDataNascimento(data);
+                
+                
+                System.out.println("Informdeo nome da Rua");
+                String rua =objetoScanner.nextLine();
+                
+                System.out.println("Informdeo nome do Bairro");
+                String bairro =objetoScanner.nextLine();
+                
+                Endereco endereco = new Endereco (rua,bairro);
+                novoDoente.setEndereco(endereco);
+                
+                bancoDeDados.add(novoDoente);
+                
+                                
+                                    
             break;    
         
         }
+        }while (escolha != 0);
         
-        System.out.println(escolha);
+        System.out.println(bancoDeDados.size());
         
         
     }
